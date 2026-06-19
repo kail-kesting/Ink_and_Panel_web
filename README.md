@@ -48,6 +48,11 @@ During live iteration testing, layout bottlenecks and structural bugs were flagg
 | **Search Engine Filtering Loop** | Active search queries caused the `.back-to-categories-btn` elements to duplicate down the page dynamically relative to category depth (e.g., repeating 4 times on "Shojo"). | Updated the `input` event listener in `script.js` to perform a `querySelectorAll` sweep. The back buttons are systematically configured to `display: none` while a query string exists and restored to standard rendering once cleared. | A single, clean, clutter-free grid layout during active live search filtering. |
 | **Comic Layout Typography Containment** | Voluminous card description strings (specifically on the *Blue Spring Ride* item entry) overflowed past fixed card dimensions, causing bounding text layers to break into structural sections. | Replaced restrictive rigid block element heights with a flexible structural layout framework using `min-height: 160px;` and `flex-grow: 1` properties inside `style.css`. | Seamless card layout uniformity where content panels gracefully scale collectively to safely hold typography. |
 
+## Live Deployments
+* **Primary (GitHub Pages):** https://kail-kesting.github.io/Ink_and_Panel_web/
+* **Backup Mirror (Netlify):** https://ink-and-panel.netlify.app/
+* **Main GitHub Repository:** 
+
 ## 📚 Academic References
 
 * Leaflet (2026) *Leaflet - an open-source JavaScript library for mobile-friendly interactive maps*. Available at: https://leafletjs.com/ (Accessed: 19 June 2026).
