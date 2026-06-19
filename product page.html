@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Comics & Manga Portfolio | Ink & Panel</title>
+    <meta name="description" content="Explore our extensive collection of Shonen manga, Seinen, Marvel, DC, and independent local comic books available for trade in Johannesburg.">
+    <meta name="keywords" content="buy manga, Marvel comic books, DC graphic novels, indie comics portfolio, comic book shop catalog">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific page modifications to allow the product cards to flow elegantly */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.875rem;
+            justify-content: center;
+            width: 100%;
+        }
+        .product-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 500px;
+            padding: 0 !important; /* Forces image flush against the comic frame border */
+            overflow: hidden;
+        }
+        .product-image {
+            width: 100%;
+            display: block;
+            border-bottom: 5px solid var(--ink-black);
+        }
+        .product-details {
+            padding: 1.25rem;
+        }
+        .product-details h3 {
+            font-size: var(--fs-h3);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <img src="images/ink&panel-logo.png" alt="Ink and Panel Logo" class="header-logo">
+        <h1 class="header-title">The Collection</h1>
+        <p class="header-tagline"><i>Curated categories for every type of storyteller.</i></p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="home page.html" class="nav-link">Home</a>
+        <a href="about page.html" class="nav-link">About</a>
+        <a href="product page.html" class="nav-link active">Products</a>
+        <a href="enquiry page.html" class="nav-link">Enquiry</a>
+        <a href="contact page.html" class="nav-link">Contact</a>
+    </nav>
+
+    <main class="container">
+        
+        <h2 style="text-align: center; text-transform: uppercase; margin-bottom: 2.5rem; font-size: var(--fs-h2);">Browse by Genre</h2>
+
+        <div class="neubrutalist-card search-wrapper" style="margin-bottom: 30px;">
+            <label for="comicSearch" style="font-family: 'Impact', 'Arial Black', sans-serif; text-transform: uppercase; letter-spacing: 1px;">Search Comic Vault</label>
+            <input type="text" id="comicSearch" placeholder="Type a title, publisher, or genre (e.g. Manga, Marvel, Indie)...">
+        </div>
+
+        <div id="lightboxModal" class="lightbox-overlay" style="display: none;">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightboxImage" alt="Expanded Splash View">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+        </div>
+        
+        <div class="product-grid">
+
+            <div id="category-view" style="display: flex; flex-wrap: wrap; gap: 1.25rem; width: 100%;">
+                
+                <div class="comic-panel product-card main-hero" id="shonen-category-trigger" style="cursor: pointer;">
+                    <img src="images/Shonen_products_ink_and_panel.PNG" alt="Shonen and Seinen" class="product-image">
+                    <div class="product-details">
+                        <h3>Shonen & Seinen</h3>
+                        <p>High-energy action and deep psychological narratives from the heart of Japan.</p>
+                    </div>
+                </div>
+
+                <div class="comic-panel product-card main-hero" id="marvel-category-trigger" style="cursor: pointer;">
+                    <img src="images/Marvel_products_ink_and_panel.PNG" alt="Marvel and DC" class="product-image">
+                    <div class="product-details">
+                        <h3>Marvel & DC</h3>
+                        <p>The titans of Western comics. Click to view our current stock inventory vault!</p>
+                    </div>
+                </div>
+
+                <div class="comic-panel product-card main-hero" id="indie-category-trigger" style="cursor: pointer;">
+                    <img src="images/Indie_products_ink_and_panel.PNG" alt="Indie and Noir" class="product-image">
+                    <div class="product-details">
+                        <h3>Indie & Noir</h3>
+                        <p>Underground zines, gritty detective mysteries, and raw local student art.</p>
+                    </div>
+                </div>
+
+                <div class="comic-panel product-card main-hero" id="shojo-category-trigger" style="cursor: pointer;">
+                    <img src="images/Shojo_products_ink_and_panel.PNG" alt="Shojo and Slice of Life" class="product-image">
+                    <div class="product-details">
+                        <h3>Shojo & Slice of Life</h3>
+                        <p>Heartfelt stories, beautiful romance, and everyday moments captured in ink.</p>
+                    </div>
+                </div>
+
+            </div> 
+
+            <div id="marvel-vault-view" class="vault-block" style="display: none; flex-wrap: wrap; gap: 1.25rem; width: 100%; align-items: stretch;">
+                <div style="width: 100%; margin-bottom: 10px;">
+                    <button class="back-to-categories-btn comic-panel" style="padding: 10px 20px; font-weight: bold; background: var(--accent-yellow); cursor: pointer; margin-bottom: 0;">⬅️ Back to Main Genres</button>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.2; min-width: 300px;">
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/MARVEL-spiderman.PNG" alt="The Amazing Spider-Man Classic Comic" class="product-image lightbox-trigger">
+                        <div class="product-details"><h3>The Amazing Spider-Man</h3><p>Marvel Comics. Classic wall-crawling action.</p></div>
+                    </div>
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/MARVEL-black-panther2.png" alt="Black Panther Wakanda King Comic" class="product-image lightbox-trigger">
+                        <div class="product-details"><h3>Black Panther</h3><p>Marvel Comics. High-tech Wakandan stealth operations.</p></div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.5; min-width: 320px;">
+                    <div class="comic-panel product-card main-hero" style="background-color: #f4ffe3; margin-bottom: 0;">
+                        <img src="images/MARVEL-hulk.png" alt="The Incredible Hulk Smash Comic" class="product-image lightbox-trigger">
+                        <div class="product-details"><h3>The Incredible Hulk</h3><p>Marvel Comics. Gamma-powered rage and destructive narratives.</p></div>
+                    </div>
+                    <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/MARVEL-x-men.PNG" alt="Uncanny X-Men Mutant Team Comic" class="product-image lightbox-trigger">
+                            <div class="product-details"><h3>Uncanny X-Men</h3><p>Marvel Comics. Mutant team narrative struggles.</p></div>
+                        </div>
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/MARVEL-thor.PNG" alt="Thor God of Thunder Comic" class="product-image lightbox-trigger">
+                            <div class="product-details"><h3>Thor</h3><p>Marvel Comics. Cosmic Asgardian battle tales.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="shonen-vault-view" class="vault-block" style="display: none; flex-wrap: wrap; gap: 1.25rem; width: 100%; align-items: stretch;">
+                <div style="width: 100%; margin-bottom: 10px;">
+                    <button class="back-to-categories-btn comic-panel" style="padding: 10px 20px; font-weight: bold; background: var(--accent-yellow); cursor: pointer; margin-bottom: 0;">⬅️ Back to Main Genres</button>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.2; min-width: 300px;">
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/SHONEN-chainsawman.png" alt="Chainsaw Man Manga Volume" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Chainsaw Man</h3>
+                            <p>Shonen/Seinen. Dark, chaotic, and high-octane devil hunting. Denji's wild ride through a visceral world of contract fiends and relentless combat.</p>
+                        </div>
+                    </div>
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/SHONEN-demonslayer.png" alt="Demon Slayer Kimetsu no Yaiba Manga Volume" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Demon Slayer</h3>
+                            <p>Shonen/Seinen. Breath-style swordsmanship and breathtaking historical fantasy. Follow Tanjiro's emotional and hazardous quest to cure his sister.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.5; min-width: 320px;">
+                    <div class="comic-panel product-card main-hero" style="background-color: #f3f9ff; margin-bottom: 0;">
+                        <img src="images/SHONEN-berserk.png" alt="Berserk Dark Fantasy Manga Volume" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Berserk (Featured Heavyweight)</h3>
+                            <p>Shonen/Seinen. The ultimate dark fantasy masterpiece. A grim, gritty, and deeply emotional epic tracking Guts, the Black Swordsman, as he battles malicious forces and a brutal destiny.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/SHONEN-hunterxhunter.png" alt="Hunter x Hunter Manga Volume" class="product-image lightbox-trigger">
+                            <div class="product-details">
+                                <h3>Hunter x Hunter</h3>
+                                <p>Brilliant tactical battle logic and perilous hunter exams.</p>
+                            </div>
+                        </div>
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/SHONEN-jujukaisen.png" alt="Jujutsu Kaisen Manga Volume" class="product-image lightbox-trigger">
+                            <div class="product-details">
+                                <h3>Jujutsu Kaisen</h3>
+                                <p>Supernatural cursed energy encounters and elite sorcerer warfare.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="indie-vault-view" class="vault-block" style="display: none; flex-wrap: wrap; gap: 1.25rem; width: 100%; align-items: stretch;">
+                <div style="width: 100%; margin-bottom: 10px;">
+                    <button class="back-to-categories-btn comic-panel" style="padding: 10px 20px; font-weight: bold; background: var(--accent-yellow); cursor: pointer; margin-bottom: 0;">⬅️ Back to Main Genres</button>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.2; min-width: 300px;">
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/INDIE-hellboy.png" alt="Hellboy Indie Comic Issue" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Hellboy</h3>
+                            <p>Indie & Noir. Cryptic folklore, paranormal investigations, and heavy ink shadows. Mike Mignola's signature supernatural investigator blocks out the dark.</p>
+                        </div>
+                    </div>
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/INDIE-invincible.png" alt="Invincible Image Comic Issue" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Invincible</h3>
+                            <p>Indie & Noir. A subversive, high-stakes superhero saga where actions have real, devastating consequences. Not your standard caped crusade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.5; min-width: 320px;">
+                    <div class="comic-panel product-card main-hero" style="background-color: #fffaf3; margin-bottom: 0;">
+                        <img src="images/INDIE-saga.png" alt="Saga Comic Volume Book" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Saga (Featured Epic)</h3>
+                            <p>Indie & Noir. An award-winning space-opera fantasy tracking two star-crossed soldiers fighting to protect their unique child across a cruel, war-torn galaxy.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/INDIE-sincity.png" alt="Sin City Dark Horse Comic" class="product-image lightbox-trigger">
+                            <div class="product-details">
+                                <h3>Sin City</h3>
+                                <p>Hardboiled crime yarns drenched in stark black-and-white noir aesthetic.</p>
+                            </div>
+                        </div>
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/INDIE-spawn.png" alt="Spawn Image Comics Issue" class="product-image lightbox-trigger">
+                            <div class="product-details">
+                                <h3>Spawn</h3>
+                                <p>Classic 90s anti-hero hellfire vengeance and dark alley deals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="shojo-vault-view" class="vault-block" style="display: none; flex-wrap: wrap; gap: 1.25rem; width: 100%; align-items: stretch;">
+                <div style="width: 100%; margin-bottom: 10px;">
+                    <button class="back-to-categories-btn comic-panel" style="padding: 10px 20px; font-weight: bold; background: var(--accent-yellow); cursor: pointer; margin-bottom: 0;">⬅️ Back to Main Genres</button>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.2; min-width: 300px;">
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/SHOJO-bluespringride.png" alt="Blue Spring Ride Ao Haru Ride Manga" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Blue Spring Ride</h3>
+                            <p>Shojo & Slice of Life. Touching high school romance tracing reunited childhood acquaintances navigating complex personal growth and old heartstrings.</p>
+                        </div>
+                    </div>
+                    <div class="comic-panel product-card main-hero" style="margin-bottom: 0;">
+                        <img src="images/SHOJO-fruitbasket.png" alt="Fruits Basket Manga Volume" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Fruits Basket</h3>
+                            <p>Shojo & Slice of Life. A heartwarming classic loaded with family secrets, transforming zodiac curses, and Tohru Honda's endless compassion.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem; flex: 1.5; min-width: 320px;">
+                    <div class="comic-panel product-card main-hero" style="background-color: #fff0f5; margin-bottom: 0;">
+                        <img src="images/SHOJO-horimiya.png" alt="Horimiya Slice of Life Manga Volume" class="product-image lightbox-trigger">
+                        <div class="product-details">
+                            <h3>Horimiya (Featured Cozy Pick)</h3>
+                            <p>Shojo & Slice of Life. Sweet, genuine everyday comfort. Two completely different school classmates accidentally discover each other's secret home personas, sparking a beautiful connection.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/SHOJO-nana.png" alt="Nana Ai Yazawa Manga Volume" class="product-image lightbox-trigger">
+                            <div class="product-details">
+                                <h3>Nana</h3>
+                                <p>Gritty punk-rock dreams, deep city bonds, and complex relationships.</p>
+                            </div>
+                        </div>
+                        <div class="comic-panel product-card main-hero" style="flex: 1; min-width: 140px; margin-bottom: 0;">
+                            <img src="images/SHOJO-spyxfamily.png" alt="Spy x Family Shonen Shojo Crossover Manga" class="product-image lightbox-trigger">
+                            <div class="product-details">
+                                <h3>Spy x Family</h3>
+                                <p>Wholesome found-family antics mixed with undercover espionage operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ink & Panel Comic Exchange. Braamfontein, JHB.</p>
+    </footer >
+<script src="script.js"></script>
+</body>
+</html>

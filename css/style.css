@@ -1,0 +1,374 @@
+/* ==========================================================================
+   1. GLOBAL ROOT VARIABLES & BASE CSS RESET
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --bg-light: #E5E5E5;
+    --panel-bg: #FFFFFF;
+    --ink-black: #0F0F0F;
+    --action-blue: #0077B6;
+    --accent-yellow: #FFD200;
+    
+    /* Fluid Typography Scale */
+    --font-main: 'Aptos', Arial Black, sans-serif;
+    --fs-body: 1rem;       /* 16px */
+    --fs-h3: 1.25rem;     /* 20px */
+    --fs-h2: 2.2rem;      /* 35px - Bumped up for the stylized look */
+    --fs-h1: 3rem;        /* 48px */
+}
+
+/* Browser Engine Normalization Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Aptos', sans-serif;
+    color: var(--ink-black);
+    line-height: 1.5;
+    /* Ben-Day Dot Paper Texture Pattern for the Body Background */
+    background-image: radial-gradient(#D0D0D0 15%, transparent 16%);
+    background-size: 10px 10px;
+}
+
+/* ==========================================================================
+   2. RE-DESIGNED COMIC-PANEL HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+    background-color: var(--panel-bg);
+    border-bottom: 8px solid var(--ink-black);
+    padding: 1.2rem 1.25rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* Creates the background comic-frame dividing slots layout */
+    background-image: 
+        linear-gradient(90deg, transparent 24%, var(--ink-black) 24%, var(--ink-black) 26%, transparent 26%, transparent 74%, var(--ink-black) 74%, var(--ink-black) 76%, transparent 76%),
+        radial-gradient(rgba(0, 0, 0, 0.1) 15%, transparent 16%);
+    background-size: 100% 100%, 12px 12px;
+}
+
+/* Keeps our logo, title, and tagline centered in their own clean white panel box */
+.header-content-wrapper {
+    background: #FFFFFF;
+    display: inline-block;
+    padding: 1px 2px;
+    border: 5px solid var(--ink-black);
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 5;
+}
+
+.header-logo {
+    width: 150px;
+    height: auto;
+    border: 3px solid var(--ink-black);
+    background: white;
+}
+
+.header-title {
+    font-family: 'Arial Black', var(--font-main);
+    font-size: var(--fs-h1);
+    text-transform: uppercase;
+    margin-top: 0.625rem;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 1.5px var(--ink-black);
+}
+
+.header-tagline {
+    font-size: var(--fs-body);
+    margin-top: 5px;
+}
+
+/* Global Navbar Styling */
+.main-nav {
+    background-color: var(--ink-black);
+    padding: 0.938rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-link {
+    color: var(--bg-light);
+    text-decoration: none;
+    margin: 0 0.938rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Interactive States for Links */
+.nav-link:hover, .nav-link:focus {
+    color: var(--accent-yellow);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    border-bottom: 3px solid var(--action-blue);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   3. CORE STRUCTURAL LAYOUT ENGINE
+   ========================================================================== */
+.container {
+    max-width: 1100px;
+    margin: 1.25rem auto;
+    padding: 0 1.25rem;
+}
+
+/* The Comic Box/Panel Core Aesthetic */
+.comic-panel {
+    border: 5px solid var(--ink-black);
+    background-color: var(--panel-bg);
+    padding: 1.875rem;
+    margin-bottom: 1.875rem;
+    position: relative;
+    outline: 2px solid var(--ink-black);
+    outline-offset: -8px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+/* Hero Section Specific Graphic Offset Drop Shadow */
+.main-hero {
+    box-shadow: 10px 10px 0px var(--action-blue);
+}
+
+/* STYLIZED HERO HEADING LOOK (Matches the dark blue pop art design mockup) */
+.main-hero .panel-heading {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-weight: 900;
+    font-size: var(--fs-h2);
+    color: var(--action-blue);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    -webkit-text-stroke: 2px var(--ink-black);
+    text-shadow: 3px 3px 0px var(--ink-black);
+    margin-bottom: 1rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border: 4px solid var(--ink-black);
+    margin-top: 0.938rem;
+    display: block;
+}
+
+/* Multi-Column Layout using CSS Flexbox */
+.panel-row {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Asymmetric Panel Weights on Desktop */
+@media screen and (min-width: 769px) {
+    .local-scene {
+        flex: 1.6; 
+    }
+    .ink-points {
+        flex: 1;
+    }
+}
+
+.local-scene, .ink-points {
+    margin-bottom: 0; 
+}
+
+.comic-panel h3 {
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    font-size: var(--fs-h3);
+    margin-bottom: 0.5rem;
+}
+
+.ink-points {
+    background-color: var(--action-blue);
+    color: #FFFFFF;
+    box-shadow: 6px 6px 0px var(--ink-black);
+}
+
+/* Theme Augmentation - Dynamic Tactile Hover */
+.comic-panel:hover {
+    transform: scale(1.015) rotate(0.5deg);
+    box-shadow: 12px 12px 0px var(--accent-yellow);
+}
+
+/* Regular Bold Lead-In Paragraph Font styling (Resets the colored "A") */
+.main-hero > p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.main-hero > p b {
+    color: var(--ink-black);
+    font-size: 1.25rem;
+}
+
+/* --- PRODUCT CARD DETAILS & LAYOUT FIXES --- */
+.vault-block .product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards in a row stretch to match the tallest one */
+}
+
+/* This targets the text box wrapper below the comic image */
+.vault-block .product-card .comic-info-box, 
+.vault-block .product-card div:last-child { 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Forces the box to take up all remaining card space */
+    min-height: 160px; /* Gives plenty of breathing room for long descriptions */
+    padding: 10px;
+}
+
+/* Slightly optimize description font sizing to safely fit the text layout */
+.vault-block .product-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   4. SITE FOOTER
+   ========================================================================== */
+.site-footer {
+    background-color: var(--ink-black);
+    color: var(--bg-light);
+    padding: 1.875rem;
+    text-align: center;
+    border-top: 5px solid var(--action-blue);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN & BREAKPOINTS
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    :root {
+        --fs-h1: 2.2rem;
+        --fs-h2: 1.6rem;
+    }
+
+    .site-header {
+        background-image: radial-gradient(rgba(0, 0, 0, 0.1) 15%, transparent 16%);
+        padding: 1.5rem 10px;
+    }
+    
+    .header-content-wrapper {
+        padding: 15px 20px;
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 0.5rem 0;
+        margin: 0;
+    }
+
+    .panel-row {
+        flex-direction: column;
+    }
+
+    .comic-panel {
+        padding: 1.25rem;
+        outline-offset: -5px;
+    }
+    
+    .main-hero {
+        box-shadow: 6px 6px 0px var(--action-blue);
+    }
+}
+
+/* Thematic Custom Scrollbar Elements */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--ink-black);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--action-blue);
+    border: 3px solid var(--ink-black);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-yellow);
+}
+
+::selection {
+    background-color: var(--accent-yellow);
+    color: var(--ink-black);
+}
+
+/* --- SECTION 6: MOBILE RESPONSIVE OPTIMIZATIONS --- */
+@media screen and (max-width: 600px) {
+    label,
+    input[type=text],
+    input[type=submit],
+    select, 
+    textarea {
+        flex: 100%;
+        min-width: 100%;
+    }
+}
+
+
+/* --- SECTION 7: VALIDATION INTERACTIVE THEMING --- */
+.input-error {
+    border-color: #ff4a4a !important;
+    background-color: #ffeaea !important;
+}
+
+.error-bubble {
+    background: #ff4a4a;
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    border: 3px solid #000000;
+    box-shadow: 3px 3px 0px #000000;
+    display: inline-block;
+}
+
+.live-points-box {
+    background: #fff4bd;
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px #000000;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.form-success-card {
+    background: #c3fcd1;
+    border: 4px solid #000000;
+    box-shadow: 6px 6px 0px #000000;
+    padding: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+.form-success-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Custom target class to enforce uniform typography across the contact columns */
+.contact-info-text h2,
+.contact-info-text h3 {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}

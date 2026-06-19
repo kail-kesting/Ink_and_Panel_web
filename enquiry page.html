@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Trade-In Enquiry | Ink & Panel Value Calculator</title>
+    <meta name="description" content="Submit your pre-loved comic book collections and manga series for an estimation. Earn Ink Points towards your next graphic novel adventure.">
+    <meta name="keywords" content="comic trade-in, value my comic book, manga estimation tool, trade comics online, Ink Points calculator">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Form-specific input styling to keep things incredibly tidy */
+        form label {
+            font-weight: bold;
+            display: block;
+            margin-top: 1rem;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 3px solid var(--ink-black);
+            font-family: var(--font-main);
+            font-size: var(--fs-body);
+            background-color: #FFFFFF;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        /* Interactive focus state for fields (Brief Section 2.5) */
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: var(--action-blue);
+            box-shadow: 4px 4px 0px var(--ink-black);
+        }
+        /* Pop-art interactive button */
+        form button {
+            background-color: var(--action-blue);
+            color: #FFFFFF;
+            padding: 0.625rem 1.25rem;
+            border: 3px solid var(--ink-black);
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        form button:hover, form button:focus {
+            background-color: var(--accent-yellow);
+            color: var(--ink-black);
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0px var(--ink-black);
+        }
+        form button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <img src="images/ink&panel-logo.png" alt="Ink and Panel Logo" class="header-logo">
+        <h1 class="header-title">Ink & Panel</h1>
+    </header>
+
+    <nav class="main-nav">
+        <a href="home page.html" class="nav-link">Home</a>
+        <a href="about page.html" class="nav-link">About</a>
+        <a href="product page.html" class="nav-link">Products</a>
+        <a href="enquiry page.html" class="nav-link active">Enquiry</a>
+        <a href="contact page.html" class="nav-link">Contact</a>
+    </nav>
+
+    <main class="container">
+        <section class="comic-panel main-hero" style="max-width: 650px; margin: 2.5rem auto;">
+            <h2 class="panel-heading">Trade-In Enquiry</h2>
+            <p>Fill in the details below to enquire about donating your collection for Ink Points.</p>
+            
+            <form id="enquiryForm" action="#">
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+    <label for="bookCount">Number of Comics to Trade</label>
+    <input type="number" id="bookCount" min="1" placeholder="e.g. 5" required>
+
+    <label for="comicCondition">Comic Condition Tier</label>
+    <select id="comicCondition" required>
+        <option value="">-- Select Condition --</option>
+        <option value="mint">Mint Condition (Flawless)</option>
+        <option value="good">Good Condition (Minor Wear)</option>
+        <option value="fair">Fair Condition (Readable/Aged)</option>
+    </select>
+
+    <div id="calculationResult" class="live-points-box" style="display: none;"></div>
+
+    <button type="submit">Submit Trade-In Enquiry</button>
+</form>
+
+<script src="script.js"></script>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Ink & Panel Comic Exchange. Braamfontein, JHB.</p>
+    </footer>
+
+</body>
+</html>

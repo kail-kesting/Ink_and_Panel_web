@@ -1,0 +1,7 @@
+# User-agent: * applies to all search engine web crawlers
+User-agent: *
+Allow: /
+
+# Link to the structural XML roadmap of the website
+Sitemap: https://kail-kesting.github.io/Ink_and_Panel_Web/sitemap.xml
+
