@@ -51,7 +51,7 @@ During live iteration testing, layout bottlenecks and structural bugs were flagg
 ## Live Deployments
 * **Primary (GitHub Pages):** https://kail-kesting.github.io/Ink_and_Panel_web/
 * **Backup Mirror (Netlify):** https://ink-and-panel.netlify.app/
-* **Main GitHub Repository:** 
+* **Main GitHub Repository:** https://github.com/kail-kesting/Ink_and_Panel_web
 
 ## 📚 Academic References
 
